@@ -45,7 +45,7 @@ input {
     width: 1vw;
     height: 1vw;
     display: none;
-    transition: all 1s;
+    transition: all 0.5s;
     transform: rotate(-45deg);
     padding-right: 1vw;
 }

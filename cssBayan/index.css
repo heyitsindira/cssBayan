@@ -3,3 +3,85 @@ body {
     padding-right: 20vw;
     background-color: bisque;
 }
+
+header {
+    border-bottom: .1vw solid;
+}
+
+.meme {
+    display: block;
+    border-bottom: .1vw solid;
+}
+
+/* Последний мем без бордера */
+.meme:last-of-type {
+    border-bottom: none;
+}
+
+input {
+    display: none;;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    color: orangered;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1vw;
+    height: 0;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.icon {
+    padding-top: 2.3vw;
+    width: 1vw;
+    height: 1vw;
+    display: none;
+    transition: all 1s;
+    transform: rotate(-45deg);
+    padding-right: 1vw;
+}
+
+
+/* При наведении на мем - меняется указатель мышки */
+.meme:hover {
+    cursor: pointer;
+}
+
+/* При наведении на секцию появляются иконки и текст становится черным */
+section:hover .icon {
+    display: flex;
+}
+section:hover .text {
+    color: black;
+}
+
+/* При наведении на мем - открывается картинка */
+.meme:hover .image {
+    opacity: 1;
+    height: 30vw;
+}
+
+/* При клике на мем - открывается картинка, иконка меняется на крестик
+   и текст становится черным */
+input:checked ~ .image {
+    opacity: 1;
+    height: 30vw;
+}
+
+input:checked ~ .title>.icon {
+    transform: rotate(0deg);
+    padding-right: 0;
+}
+
+input:checked ~ .title>.text {
+    color: black;
+}

@@ -85,3 +85,29 @@ input:checked ~ .title>.icon {
 input:checked ~ .title>.text {
     color: black;
 }
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 85%;
+    }
+    body {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    html {
+        font-size: 150%;
+    }
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 210%;
+    }
+}

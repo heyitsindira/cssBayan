@@ -41,11 +41,10 @@ input {
 }
 
 .icon {
-    padding-top: 2.3vw;
     width: 1vw;
     height: 1vw;
     display: none;
-    transition: all 0.5s;
+    transition: all 1s;
     transform: rotate(-45deg);
     padding-right: 1vw;
 }
@@ -67,17 +66,17 @@ section:hover .text {
 /* При наведении на мем - открывается картинка */
 .meme:hover .image {
     opacity: 1;
-    height: 30vw;
+    height: 50vw;
 }
 
 /* При клике на мем - открывается картинка, иконка меняется на крестик
    и текст становится черным */
 input:checked ~ .image {
     opacity: 1;
-    height: 30vw;
+    height: 50vw;
 }
 
-input:checked ~ .title>.icon {
+input:checked ~ .title>h2>.icon {
     transform: rotate(0deg);
     padding-right: 0;
 }
@@ -86,6 +85,7 @@ input:checked ~ .title>.text {
     color: black;
 }
 
+
 @media screen and (min-width: 320px) {
     html {
         font-size: 85%;
@@ -93,6 +93,10 @@ input:checked ~ .title>.text {
     body {
         padding-left: 3%;
         padding-right: 3%;
+    }
+    .icon {
+        width: 2vw;
+        height: 2vw;
     }
 }
 
@@ -104,10 +108,22 @@ input:checked ~ .title>.text {
         padding-left: 5%;
         padding-right: 5%;
     }
+    .icon {
+        width: 2vw;
+        height: 2vw;
+    }
 }
 
 @media screen and (min-width: 1920px) {
     html {
         font-size: 210%;
+    }
+    body {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .icon {
+        width: 1.2vw;
+        height: 1.2vw;
     }
 }

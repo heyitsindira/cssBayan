@@ -1,6 +1,6 @@
 body {
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 40vw;
+    padding-right: 40vw;
     background-color: bisque;
 }
 
@@ -43,8 +43,9 @@ input {
 .icon {
     width: 1vw;
     height: 1vw;
-    display: none;
-    transition: all 1s;
+    opacity: 0;
+    justify-content: center;
+    transition: all .5s;
     transform: rotate(-45deg);
     padding-right: 1vw;
 }
@@ -57,7 +58,7 @@ input {
 
 /* При наведении на секцию появляются иконки и текст становится черным */
 section:hover .icon {
-    display: flex;
+    opacity: 1;
 }
 section:hover .text {
     color: black;
@@ -66,19 +67,32 @@ section:hover .text {
 /* При наведении на мем - открывается картинка */
 .meme:hover .image {
     opacity: 1;
-    height: 50vw;
+    height: 30vw;
+}
+
+/* При клике на мем - иконка и картинка становятся прозрачными и меняется цвет текста */
+.meme:active .image {
+    opacity: 0.2;
+}
+
+.meme:active .title>.text {
+    color: blue;
+}
+
+.meme:active .title>h2>.icon {
+    opacity: 0.2;
 }
 
 /* При клике на мем - открывается картинка, иконка меняется на крестик
    и текст становится черным */
 input:checked ~ .image {
     opacity: 1;
-    height: 50vw;
+    height: 30vw;
 }
 
 input:checked ~ .title>h2>.icon {
     transform: rotate(0deg);
-    padding-right: 0;
+    padding-right: .8vw;
 }
 
 input:checked ~ .title>.text {
@@ -91,12 +105,12 @@ input:checked ~ .title>.text {
         font-size: 85%;
     }
     body {
-        padding-left: 3%;
-        padding-right: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     .icon {
-        width: 2vw;
-        height: 2vw;
+        width: 3vw;
+        height: 3vw;
     }
 }
 
@@ -105,12 +119,12 @@ input:checked ~ .title>.text {
         font-size: 150%;
     }
     body {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 20%;
+        padding-right: 20%;
     }
     .icon {
-        width: 2vw;
-        height: 2vw;
+        width: 1.5vw;
+        height: 1.5vw;
     }
 }
 
@@ -119,8 +133,8 @@ input:checked ~ .title>.text {
         font-size: 210%;
     }
     body {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 20%;
+        padding-right: 20%;
     }
     .icon {
         width: 1.2vw;

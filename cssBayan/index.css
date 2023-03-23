@@ -1,0 +1,143 @@
+body {
+    padding-left: 40vw;
+    padding-right: 40vw;
+    background-color: bisque;
+}
+
+header {
+    border-bottom: .1vw solid;
+}
+
+.meme {
+    display: block;
+    border-bottom: .1vw solid;
+}
+
+/* Последний мем без бордера */
+.meme:last-of-type {
+    border-bottom: none;
+}
+
+input {
+    display: none;;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    color: orangered;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1vw;
+    height: 0;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.icon {
+    width: 1vw;
+    height: 1vw;
+    opacity: 0;
+    justify-content: center;
+    transition: all .5s;
+    transform: rotate(-45deg);
+    padding-right: 1vw;
+}
+
+
+/* При наведении на мем - меняется указатель мышки */
+.meme:hover {
+    cursor: pointer;
+}
+
+/* При наведении на секцию появляются иконки и текст становится черным */
+section:hover .icon {
+    opacity: 1;
+}
+section:hover .text {
+    color: black;
+}
+
+/* При наведении на мем - открывается картинка */
+.meme:hover .image {
+    opacity: 1;
+    height: 30vw;
+}
+
+/* При клике на мем - иконка и картинка становятся прозрачными и меняется цвет текста */
+.meme:active .image {
+    opacity: 0.2;
+}
+
+.meme:active .title>.text {
+    color: blue;
+}
+
+.meme:active .title>h2>.icon {
+    opacity: 0.2;
+}
+
+/* При клике на мем - открывается картинка, иконка меняется на крестик
+   и текст становится черным */
+input:checked ~ .image {
+    opacity: 1;
+    height: 30vw;
+}
+
+input:checked ~ .title>h2>.icon {
+    transform: rotate(0deg);
+    padding-right: .8vw;
+}
+
+input:checked ~ .title>.text {
+    color: black;
+}
+
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 85%;
+    }
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .icon {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    html {
+        font-size: 150%;
+    }
+    body {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .icon {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 210%;
+    }
+    body {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .icon {
+        width: 1.2vw;
+        height: 1.2vw;
+    }
+}
